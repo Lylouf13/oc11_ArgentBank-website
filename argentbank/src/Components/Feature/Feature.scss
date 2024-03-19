@@ -1,0 +1,16 @@
+.feature{
+    flex:1;
+    &__icon{
+        width: 125px;
+        padding: 15px;
+        border: 10px solid #00bc77;
+        border-radius: 100px;
+    }
+    &__title{
+        font-size: 18px;
+        font-weight: bold;
+    }
+    &__text{
+
+    }
+}
