@@ -1,0 +1,18 @@
+.header{
+    display:flex;
+    justify-content: space-between;
+    &__logo{
+        height: 55px;
+        padding: 5px 20px;
+    }
+    &__sign{
+        display: flex;
+        align-items: center;
+        padding-right: 30px;
+        font-weight: bold;
+    }
+    &__icon{
+        width: 30px;
+        height: 30px;
+    }
+}
