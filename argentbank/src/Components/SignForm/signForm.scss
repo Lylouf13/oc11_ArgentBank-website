@@ -1,0 +1,13 @@
+.sign{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__form{
+        &__label{
+            margin-top: 10px;
+        }
+        &__input{
+            width: 300px;
+        }
+    }
+}
