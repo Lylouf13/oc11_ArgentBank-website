@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <header className='header'>
         <img className='header__logo' src={logo} alt="logo ArgentBank"/>
-        <Link to="/sign"className='header__sign'><img className='header__icon' src={icon} />Sign in</Link>
+        <Link to="/sign"className='header__sign'><img className='header__icon' src={icon} alt='log icon' />Sign in</Link>
     </header>
   )
 }
