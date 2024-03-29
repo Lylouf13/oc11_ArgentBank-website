@@ -1,0 +1,36 @@
+.account{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 80%;
+    margin: 20px 0px;
+    background-color: white;
+    text-align: left;
+    &__data{
+        width: 100%;
+        color: #2c3e50;
+        &__text{
+
+        }
+        &__balance{
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+    }
+
+    &__button{
+        display: block;
+        width: 260px;
+        height: 40px;
+        padding: 8px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        border-color: #00bc77;
+        background-color: #00bc77;
+        color: #fff;
+    }
+}
