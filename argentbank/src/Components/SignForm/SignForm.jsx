@@ -1,9 +1,40 @@
 import React from 'react'
 import './signForm.scss'
 
+// import { useSelector, useDispatch } from 'react-redux'
+// import { login, logout } from '../../Reducers/Login/login'
+import { useNavigate } from 'react-router-dom'
+
+
+
 export default function SignForm() {
+
+  const redirect = useNavigate()
+  
+  function handleSubmit(mail, passWord){
+    const userLogin= {
+      email:mail,
+      password:passWord
+    }
+    const body =  JSON.stringify(userLogin)
+    fetch(`http://localhost:3001/api/v1/user/login`, {
+      method: 'POST',
+      headers: { "Content-Type":"application/json" },
+      body:body
+    })
+    .then (r=> {
+      if(r.status===200){
+        return r.json()
+        .then(r=>{
+          redirect("/user")
+          // Store r.body.token in redux
+        })
+      }
+    })
+  }
+
   return (
-    <div className='sign'>
+    <div className='sign' onSubmit={e => {e.preventDefault(); handleSubmit (e.target.username.value, e.target.password.value)}}>
       <form className='sign__form'>
         <h2>Sign in</h2>
         <label className='sign__form__label' for="username">Username</label>
@@ -14,7 +45,12 @@ export default function SignForm() {
           <input type="checkbox" id="remember-me" />
           <label for="remember-me">Remember me</label>
         </div>
-        <button className='sign__form__button' type="button">Sign In</button>
+        <button 
+          className='sign__form__button' 
+          type="submit"
+          >
+            Sign In
+          </button>
       </form>
     </div>
   )

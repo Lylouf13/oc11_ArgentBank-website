@@ -1,8 +1,9 @@
-import { configureStore } from 'redux'
+import { configureStore } from '@reduxjs/toolkit'
 
-initialState={
-    test:1,
-    test2:2
-}
+import loginReducer from './Reducers/Login/login'
 
-configureStore(reducer, initialState)
+export const store = configureStore({
+    reducer: {
+        login: loginReducer,
+    },
+})
