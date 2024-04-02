@@ -1,8 +1,7 @@
 import React from 'react'
 import './signForm.scss'
 
-import { useSelector, useDispatch } from 'react-redux'
-// import { login, logout } from '../../Reducers/Login/login'
+import { useDispatch } from 'react-redux'
 import { login } from '../../Reducers/Login/login'
 import { useNavigate } from 'react-router-dom'
 
@@ -30,7 +29,6 @@ export default function SignForm() {
         .then(r=>{
           dispatch(login(r.body.token))
           redirect("/user")
-          // Store r.body.token in redux
         })
       }
     })
