@@ -3,7 +3,7 @@ import './signForm.scss'
 
 import { useSelector, useDispatch } from 'react-redux'
 // import { login, logout } from '../../Reducers/Login/login'
-import { loginSlice, login } from '../../Reducers/Login/login'
+import { login } from '../../Reducers/Login/login'
 import { useNavigate } from 'react-router-dom'
 
 
