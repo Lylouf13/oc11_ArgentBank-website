@@ -1,14 +1,16 @@
 import React from 'react'
 import './signForm.scss'
 
-// import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 // import { login, logout } from '../../Reducers/Login/login'
+import { loginSlice, login } from '../../Reducers/Login/login'
 import { useNavigate } from 'react-router-dom'
 
 
 
 export default function SignForm() {
 
+  const dispatch = useDispatch()
   const redirect = useNavigate()
   
   function handleSubmit(mail, passWord){
@@ -26,6 +28,7 @@ export default function SignForm() {
       if(r.status===200){
         return r.json()
         .then(r=>{
+          dispatch(login(r.body.token))
           redirect("/user")
           // Store r.body.token in redux
         })
