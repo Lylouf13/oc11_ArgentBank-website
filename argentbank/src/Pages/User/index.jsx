@@ -22,7 +22,7 @@ export default function User() {
     fetch(`http://localhost:3001/api/v1/user/profile`, {
       method: 'PUT',
       headers: { 
-        "Accept" :"application/json",
+        "Content-Type":"application/json",
         "Authorization":`Bearer ${token}` },
       body: myBody
     })
