@@ -10,12 +10,18 @@ export const loginSlice = createSlice({
     initialState,
     reducers:{
         login: (state, action) =>{
-            state.token = action.payload
-            state.logged = true
+            return{
+                ...state,
+                token : action.payload,
+                logged : true
+            }
         },
         logout: (state) => {
-            state.token = null
-            state.logged = false
+            return{
+                ...state,
+                token : null,
+                logged : false
+            }
         }
     }
 })
