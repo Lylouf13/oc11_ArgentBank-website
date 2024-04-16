@@ -58,7 +58,7 @@ export default function SignForm() {
   return (
     <div className='sign' onSubmit={e => {e.preventDefault(); handleSubmit (e.target.username.value, e.target.password.value)}}>
       <form className='sign__form'>
-        <h2>Sign in</h2>
+        <h2>Sign In</h2>
         <label className='sign__form__label' htmlFor="username">Username</label>
         <input className='sign__form__input' type="text" id="username"></input>
         <label className='sign__form__label' htmlFor="password">Password</label>

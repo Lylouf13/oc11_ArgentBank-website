@@ -28,7 +28,8 @@ export const userProfileSlice = createSlice({
         },
         modifyCurrentUser: (state, action) => {
             return{
-                ...state
+                ...state,
+                userName:action.payload
             }
         },
         disconnectedUser: (state) => {
