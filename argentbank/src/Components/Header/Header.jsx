@@ -2,8 +2,10 @@ import React from 'react'
 import logo from '../../Assets/Images/argentBankLogo.png'
 import icon from '../../Assets/Images/icon-chat.png'
 
-import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRightFromBracket, faCircleUser } from '@fortawesome/free-solid-svg-icons'
 
 import { logout } from '../../Reducers/Login/login'
 import { disconnectedUser } from '../../Reducers/userProfile/userProfile'
@@ -21,20 +23,25 @@ export default function Header() {
   }
   return (
     <header className='header'>
-        <img className='header__logo' src={logo} alt="logo ArgentBank"/>
+        <Link to="/"className='header__sign'>
+          <img className='header__logo' src={logo} alt="logo ArgentBank"/>
+        </Link>
         {logged ?
           <div className='header__containerHorizontal'>
             <Link to="/user" className='header__user'>
-              <img className='header__icon' src={icon} alt='log icon' />
+              <FontAwesomeIcon icon={faCircleUser} className='header__icon' />
               {user}
             </Link>
             <Link to="/"className='header__sign' onClick={clickHandler}>
-              <img className='header__icon' src={icon} alt='log icon' />
+              <FontAwesomeIcon icon={faRightFromBracket} className='header__icon' />
               Log Out
             </Link>
           </div>
           :
-          <Link to="/sign"className='header__sign'><img className='header__icon' src={icon} alt='log icon' />Sign in</Link>
+          <Link to="/sign"className='header__sign'>
+            <FontAwesomeIcon icon={faCircleUser} className='header__icon' />
+            Sign in
+          </Link>
         }
     </header>
   )
