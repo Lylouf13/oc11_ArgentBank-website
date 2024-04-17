@@ -101,6 +101,50 @@ paths:
           description: Invalid Fields
         '500':
           description: Internal Server Error
+  /user/account:
+    post:
+      security:
+        - Bearer: []
+      tags:
+        - User Module
+      summary: User Account API
+      description: API for fetching a user accounts
+      #produces:
+       # - application/json
+      responses:
+        '200':
+          description: User accounts retrieved successully
+          schema:
+            $ref: '#/definitions/UserAccount'
+        '400':
+          description: Invalid Fields
+        '500':
+          description: Internal Server Error
+    put:
+      security:
+        - Bearer: []
+      tags:
+        - User Module
+      summary: User Account API
+      description: API for editing details from user's transactions
+      parameters:
+        - in: body
+          name: body
+          description: Update transaction details
+          required: true
+          schema:
+            $ref: '#/definitions/EditTransaction'
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Transaction details modified sucessfully
+          schema:
+            $ref: '#/definitions/TransactionResponse'
+        '400':
+          description: Invalid Fields
+        '500':
+          description: Internal Server Error
 securityDefinitions:
   Bearer:
     type: apiKey
@@ -156,3 +200,67 @@ definitions:
     properties:
       userName:
         type: string
+  UserAccount:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      balance:
+        type: string
+      transactions:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: integer
+            date:
+              type: string
+            description:
+              type: string
+            amount:
+              type: string
+            balance:
+              type: string
+            details:
+              type: array
+              items:
+                type: object
+                properties:
+                  transactionType:
+                    type: string
+                  transactionCategory:
+                    type: string
+                  transactionNote:
+                    type: string
+  EditTransaction:
+    type: object
+    properties:
+      accountId:
+        type: integer
+      transactionId:
+        type: integer
+      modifiedElement:
+        type: string
+      data:
+        type: string
+  TransactionResponse:
+    type: object
+    properties:
+      status:
+        type: integer
+      message:
+        type: string
+      body:
+        type: object
+        properties:
+          accountId:
+            type: integer
+          transactionId:
+            type: integer
+          modifiedElement:
+            type: string
+          newData:
+            type: string
