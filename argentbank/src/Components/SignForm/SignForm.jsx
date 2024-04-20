@@ -7,6 +7,8 @@ import { setCurrentUser } from '../../Reducers/userProfile/userProfile'
 import { login } from '../../Reducers/Login/login'
 import { useNavigate } from 'react-router-dom'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function SignForm() {
@@ -58,6 +60,7 @@ export default function SignForm() {
   return (
     <div className='sign' onSubmit={e => {e.preventDefault(); handleSubmit (e.target.username.value, e.target.password.value)}}>
       <form className='sign__form'>
+        <FontAwesomeIcon icon={faCircleUser} className='sign__form__icon' />
         <h2>Sign In</h2>
         <label className='sign__form__label' htmlFor="username">Username</label>
         <input className='sign__form__input' type="text" id="username"></input>
@@ -65,7 +68,7 @@ export default function SignForm() {
         <input className='sign__form__input' type="password" id="password"></input>
         <div className='sign__form__remember'>
           <input type="checkbox" id="remember-me" />
-          <label htmlFor="remember-me">Remember me</label>
+          <label htmlFor="remember-me" className='sign__form__remember__label'>Remember me</label>
         </div>
         <button 
           className='sign__form__button' 
