@@ -26,4 +26,22 @@
             }
         }
     }
+    @media screen and (max-width:700px){
+        &__container{
+            position: relative;
+            top: 30%;
+            left: 5%;
+            max-width: 250px;
+            max-height: 125px;
+            &__text{
+                font-size: 14px;
+                text-align: left;
+                &--bold{
+                    font-size: 17px;
+                    font-weight: bold;
+                }
+            }
+        }
+
+    }
 }

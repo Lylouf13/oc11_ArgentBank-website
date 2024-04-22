@@ -33,4 +33,18 @@
         background-color: #00bc77;
         color: #fff;
     }
+    @media screen and (max-width:700px){
+
+        &__data{
+            &__balance{
+                font-size: 1.8rem;
+            }
+        }
+
+        &__button{
+            padding: 0px;
+            max-width: 85px;
+            font-size: 0.7rem;
+        }
+    }
 }

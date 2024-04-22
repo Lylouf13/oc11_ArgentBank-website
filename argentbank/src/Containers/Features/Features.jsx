@@ -14,10 +14,12 @@ export default function Features() {
             image={chatIcon} 
             title={"You are our #1 priority"}
             text={"Need to talk to a representative? You can get in touch through our 24/7 chat or through a phone call in less than 5 minutes."}/>
-        <Feature 
+        <Feature
             image={moneyIcon} 
             title={"More savings means higher rates"}
-            text={"The more you save with us, the higher your interest rate will be!"}/>
+            text={"The more you save with us, the higher your interest rate will be!"}
+            background={true}
+            />
         <Feature 
             image={securityIcon} 
             title={"Security you can trust"}
