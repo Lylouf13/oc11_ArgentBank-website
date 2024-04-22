@@ -34,8 +34,7 @@ export const userProfileSlice = createSlice({
         },
         disconnectedUser: (state) => {
             return{
-                ...state,
-                state : initialState
+                initialState
             }
         }
     }

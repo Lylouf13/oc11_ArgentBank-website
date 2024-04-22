@@ -1,6 +1,6 @@
 import React from 'react'
 import './banner.scss'
-import bannerImage from '../../Assets/Images/bank-tree.jpeg'
+import bannerImage from '../../Assets/Images/bank-tree.webp'
 
 export default function Banner() {
   return (
