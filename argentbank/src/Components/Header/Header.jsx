@@ -1,6 +1,5 @@
 import React from 'react'
-import logo from '../../Assets/Images/argentBankLogo.png'
-import icon from '../../Assets/Images/icon-chat.png'
+import logo from '../../Assets/Images/argentBankLogo.webp'
 
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
