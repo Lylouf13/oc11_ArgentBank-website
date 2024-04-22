@@ -27,7 +27,7 @@ export default function Header() {
         </Link>
         {logged ?
           <div className='header__containerHorizontal'>
-            <Link to="/user" className='header__user'>
+            <Link to="/user" className='header__user'  state= {{ logged: true }}>
               <FontAwesomeIcon icon={faCircleUser} className='header__icon' />
               {user}
             </Link>

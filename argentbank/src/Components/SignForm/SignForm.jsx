@@ -35,7 +35,7 @@ export default function SignForm() {
           loadProfile()
         })
         .then(
-          redirect("/user")
+          redirect("/user", { state: { logged: true }})
         )
       }
     })
