@@ -16,7 +16,6 @@ export default function User() {
   const location = useLocation()
   const dispatch = useDispatch()
   const [edit, setEdit] = useState(false)
-  console.log(token)
 
   function openEdit(){
     setEdit(!edit)

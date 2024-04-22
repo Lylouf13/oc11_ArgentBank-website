@@ -25,17 +25,27 @@
             font-weight: bold;
             margin-top: 20px;
         }
+
         &__input{
             height: 30px;
+            &--red{
+                border: solid 1px red;
+            }
         }
+
         &__remember{
             text-align: left;
             margin-top: 10px;
-
+            
             &__label{
                 padding-left: 10px;
             }
         }
+
+        &__error{
+            color: red;
+        }
+
         &__button{
             @include cta;
             text-decoration: underline;

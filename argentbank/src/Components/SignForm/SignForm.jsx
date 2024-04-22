@@ -1,4 +1,4 @@
-import React from 'react'
+import {React, useState} from 'react'
 import './signForm.scss'
 
 import { store } from '../../Store'
@@ -15,8 +15,10 @@ export default function SignForm() {
 
   const dispatch = useDispatch()
   const redirect = useNavigate()
+
+  const [logError, setLogError] = useState(false)
   
-  function handleSubmit(mail, passWord){
+  function handleSubmit(mail, passWord, event){
     const userLogin= {
       email:mail,
       password:passWord
@@ -38,6 +40,12 @@ export default function SignForm() {
           redirect("/user", { state: { logged: true }})
         )
       }
+      else{
+        event.target.username.className= `sign__form__input sign__form__input--red`
+        event.target.password.className= `sign__form__input sign__form__input--red`
+        setLogError(true)
+        return
+      }
     })
   }
 
@@ -58,7 +66,7 @@ export default function SignForm() {
 
 
   return (
-    <div className='sign' onSubmit={e => {e.preventDefault(); handleSubmit (e.target.username.value, e.target.password.value)}}>
+    <div className='sign' onSubmit={e => {e.preventDefault(); handleSubmit (e.target.username.value, e.target.password.value, e)}}>
       <form className='sign__form'>
         <FontAwesomeIcon icon={faCircleUser} className='sign__form__icon' />
         <h2>Sign In</h2>
@@ -70,6 +78,7 @@ export default function SignForm() {
           <input type="checkbox" id="remember-me" />
           <label htmlFor="remember-me" className='sign__form__remember__label'>Remember me</label>
         </div>
+        {logError && <p className='sign__form__error'>Identifiant ou mot de passe erroné</p>}
         <button 
           className='sign__form__button' 
           type="submit"
